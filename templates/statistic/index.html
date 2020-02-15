@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+<div class="jumbotron page-header">
+  <h2>Estatísticas</h2>
+  <table class="table table-dark table-striped">
+    <tbody>
+      <tr>
+        <td>Objetivo Anual: {{ anual_objective_int|floatformat:2 }} km</td>
+      </tr>
+      <tr>
+        <td>Obj. Sem. Inicial: {{ initialweekgoal|floatformat:2 }} km</td>
+      </tr>
+      <tr>
+        <td>Percorrida: {{ total_distance|floatformat:2 }} km</td>
+      </tr>
+      <tr>
+        <td>A ser percorrida: {{ debt|floatformat:2 }} km</td>
+      </tr>
+      <tr>
+        <td>Acumulado: {{ deficit|floatformat:2 }} km</td>
+      </tr>
+      <tr>
+        <td>
+          {% if excess <= 0 %}
+            Excedente: 0,00 km
+          {% else %}
+            Excedente: {{ excess }} km
+          {% endif %}
+        </td>
+      </tr>
+      <tr>
+        <td>Meta semanal: {{ actualweekgoal|floatformat:2 }} km</td>
+      </tr>
+      <tr>
+        <td>Dist. semanal: {{ actual_weekly_distance|floatformat:2 }} km</td>
+      </tr>
+      <tr>
+        <td>Saldo Semanal: {{ weekly_balance|floatformat:2 }} km</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+{% endblock %}

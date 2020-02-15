@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load bootstrap %}
+
+{% block main %}
+
+<div class="jumbotron page-header">
+  <h2>Cadastrar Objetivo Anual</h2>
+  <form method="POST" class="post-form">
+    {% csrf_token %}
+    {{ form|bootstrap }}
+    <button type="submit" class="save btn btn-dark">Save</button>
+  </form>
+</div>
+
+{% endblock %}

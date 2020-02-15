@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+  {% if messages %}
+  <ul class="messages">
+      {% for message in messages %}
+      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+      {% endfor %}
+  </ul>
+  {% endif %}
+
+  <div class="jumbotron page-header">
+    <h3>Bem vindo</h3>
+      <div class="card bg-danger text-white">
+        <div class="card-body">Você ainda não cadastrou um objetivo</div>
+      </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+  {% if messages %}
+  <ul class="messages">
+      {% for message in messages %}
+      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+      {% endfor %}
+  </ul>
+  {% endif %}
+
+  <div class="jumbotron page-header">
+    <h3>Bem vindo</h3>
+      <div class="card bg-primary text-white">
+        <div class="card-body">Semana {{ weeknumbernow }} de {{ totalweekyear }}</div>
+      </div>
+      <br>
+      <div class="card bg-success text-white">
+        <div class="card-body">Objetivo Anual: {{ anual_objective_int|floatformat:2 }} km</div>
+      </div>
+      <br>
+      <div class="card bg-info text-white">
+        <div class="card-body">Distância percorrida: {{ total_distance_decimal|floatformat:2 }} km</div>
+      </div>
+      <br>
+      <div class="card bg-warning text-white">
+        <div class="card-body">Meta semanal: {{ actualweekgoal|floatformat:2 }} km</div>
+      </div>
+      <br>
+      <div class="card bg-danger text-white">
+        <div class="card-body">Distância nesta semana: {{ actual_weekly_distance|floatformat:2 }} km</div>
+      </div>
+  </div>
+
+{% endblock %}
